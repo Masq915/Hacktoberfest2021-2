@@ -1,0 +1,38 @@
+// Write a function to print all prime numbers between two given numbers.
+#include<iostream>
+using namespace std;
+int between_two_prime(int a);
+int main()
+{
+    int start, end, flag;
+    cout << "Starting from: ";
+    cin >> start;
+    cout << "till to: ";
+    cin >> end;
+    for(int i=start; i<=end; i++)
+    {
+       flag = between_two_prime(i); 
+
+    if(flag == 0 || i <= 1)
+        {
+            continue;
+        }
+        else if(flag == 1)      {
+            cout << i << "\t";
+        }
+    }
+    return 0;
+}
+int between_two_prime(int a)
+{
+    int flag=1;
+    for(int j=2; j<a; j++)
+    {
+        if(a % j == 0)
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
